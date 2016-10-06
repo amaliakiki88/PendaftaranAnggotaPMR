@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             tvHasil.setText("Nama :" + nama);
         }
 
-        String JK = null
+        String JK = null;
         if (rgJK.getCheckedRadioButtonId() != -1) {
             RadioButton rb = (RadioButton)
                     findViewById(rgJK.getCheckedRadioButtonId());
