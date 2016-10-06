@@ -16,6 +16,7 @@
 
     <TextView
         android:id="@+id/textView"
+        style="@style/Base.TextAppearance.AppCompat.Headline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -28,24 +29,33 @@
             android:layout_gravity="center_horizontal"
             android:src="@drawable/ts" />
 
-        <EditText
-            android:id="@+id/editText"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/editTextNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama" />
+
+        </android.support.design.widget.TextInputLayout>
+
 
         <RadioGroup
+            android:id="@+id/radioGroupJK"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/radioButtonLK"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
                 android:text="Laki-laki" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/radioButtonPR"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="false"
@@ -74,14 +84,21 @@
             android:text="Perawatan Keluarga" />
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/spinnerKelas"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:entries="@array/kelas" />
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
+            android:id="@+id/buttonOK"
+            android:layout_width="306dp"
             android:layout_height="wrap_content"
-            android:text="New Button" />
-</LinearLayout>
+            android:text="OK" />
+
+        <TextView
+            android:id="@+id/textViewHasil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="" />
+    </LinearLayout>
 </ScrollView>
