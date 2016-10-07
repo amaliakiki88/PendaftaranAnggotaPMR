@@ -56,17 +56,25 @@ public class MainActivity extends AppCompatActivity {
             JK = rb.getText().toString();
         }
 
-        String materi = "Materi yang dimengerti : ";
+        String materi = "Materi yang dimengerti : \n";
         int startlen = materi.length();
         int ygDicentang = 0;
-        if (cbSJ.isChecked()) materi += cbSJ.getText() + "\n";
-        ygDicentang++;
-        if (cbPP.isChecked()) materi += cbPP.getText() + "\n";
-        ygDicentang++;
-        if (cbPK.isChecked()) materi += cbPK.getText() + "\n";
-        ygDicentang++;
-        if (cbDD.isChecked()) materi += cbDD.getText() + "\n";
-        ygDicentang++;
+        if (cbSJ.isChecked()) {
+            materi += cbSJ.getText() + "\n";
+            ygDicentang++;
+        }
+        if (cbPP.isChecked()) {
+            materi += cbPP.getText() + "\n";
+            ygDicentang++;
+        }
+        if (cbPK.isChecked()) {
+            materi += cbPK.getText() + "\n";
+            ygDicentang++;
+        }
+        if (cbDD.isChecked()) {
+            materi += cbDD.getText() + "\n";
+            ygDicentang++;
+        }
 
         if (materi.length() == startlen) materi += "Tidak ada pada pilihan";
 
@@ -74,9 +82,9 @@ public class MainActivity extends AppCompatActivity {
             StringBuilder builder = new StringBuilder();
             builder.append("Selamat Anda Diterima! \n \n");
             builder.append("Nama : " + etNama.getText().toString() + "\n");
-            builder.append("Kelas :" + spKelas.getSelectedItem().toString());
-            builder.append("Jenis Kelamin :" + JK);
-            builder.append("Materi yang dimengerti :" + materi);
+            builder.append("Kelas :" + spKelas.getSelectedItem().toString() + "\n");
+            builder.append("Jenis Kelamin :" + JK + "\n");
+            builder.append(materi + "\n");
 
             tvHasil.setText(builder);
         } else {
