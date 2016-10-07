@@ -27,7 +27,7 @@
             android:layout_width="86dp"
             android:layout_height="110dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/Pmi" />
+            android:src="@drawable/pmr" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -41,6 +41,20 @@
 
         </android.support.design.widget.TextInputLayout>
 
+
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kelas "
+            android:textColor="@color/accent_material_light" />
+
+        <Spinner
+            android:id="@+id/spinnerKelas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/kelas" />
 
         <TextView
             android:id="@+id/textView2"
@@ -75,7 +89,7 @@
             style="@style/Base.TextAppearance.AppCompat.Subhead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Materi Yang dikuasai "
+            android:text="Materi Yang dimengerti"
             android:textColor="@color/accent_material_light" />
 
         <CheckBox
@@ -93,7 +107,7 @@
             android:text="Pertolongan Pertama" />
 
         <CheckBox
-            android:id="@+id/checkBox3"
+            android:id="@+id/checkBoxPK"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="false"
@@ -105,20 +119,6 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="Donor Darah" />
-
-        <TextView
-            android:id="@+id/textView4"
-            style="@style/Base.TextAppearance.AppCompat.Subhead"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kelas "
-            android:textColor="@color/accent_material_light" />
-
-        <Spinner
-            android:id="@+id/spinnerKelas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/kelas" />
 
         <Button
             android:id="@+id/buttonOK"

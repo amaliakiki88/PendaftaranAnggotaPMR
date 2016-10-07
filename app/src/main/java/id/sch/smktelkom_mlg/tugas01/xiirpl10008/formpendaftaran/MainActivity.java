@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     Button Bok;
     TextView tvHasil;
     RadioGroup rgJK;
+    CheckBox cbPP, cbSJ, cbPK, cbDD;
+    Spinner spKelas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +28,12 @@ public class MainActivity extends AppCompatActivity {
         etNama = (EditText) findViewById(R.id.editTextNama);
         Bok = (Button) findViewById(R.id.buttonOK);
         rgJK = (RadioGroup) findViewById(R.id.radioGroupJK);
+        cbSJ = (CheckBox) findViewById(R.id.checkBoxSJ);
+        cbPP = (CheckBox) findViewById(R.id.checkBoxPP);
+        cbPK = (CheckBox) findViewById(R.id.checkBoxPK);
+        cbDD = (CheckBox) findViewById(R.id.checkBoxDD);
         tvHasil = (TextView) findViewById(R.id.textViewHasil);
+        spKelas = (Spinner) findViewById(R.id.spinnerKelas);
 
         Bok.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
     private void doClick() {
         if (isValid()) {
             String nama = etNama.getText().toString();
-            tvHasil.setText("Nama :" + nama);
         }
 
         String JK = null;
@@ -48,6 +56,32 @@ public class MainActivity extends AppCompatActivity {
             JK = rb.getText().toString();
         }
 
+        String materi = "Materi yang dimengerti : ";
+        int startlen = materi.length();
+        int ygDicentang = 0;
+        if (cbSJ.isChecked()) materi += cbSJ.getText() + "\n";
+        ygDicentang++;
+        if (cbPP.isChecked()) materi += cbPP.getText() + "\n";
+        ygDicentang++;
+        if (cbPK.isChecked()) materi += cbPK.getText() + "\n";
+        ygDicentang++;
+        if (cbDD.isChecked()) materi += cbDD.getText() + "\n";
+        ygDicentang++;
+
+        if (materi.length() == startlen) materi += "Tidak ada pada pilihan";
+
+        if (ygDicentang >= 2) {
+            StringBuilder builder = new StringBuilder();
+            builder.append("Selamat Anda Diterima! \n \n");
+            builder.append("Nama : " + etNama.getText().toString() + "\n");
+            builder.append("Kelas :" + spKelas.getSelectedItem().toString());
+            builder.append("Jenis Kelamin :" + JK);
+            builder.append("Materi yang dimengerti :" + materi);
+
+            tvHasil.setText(builder);
+        } else {
+            tvHasil.setText("Maaf anda tidak diterima");
+        }
 
     }
 
